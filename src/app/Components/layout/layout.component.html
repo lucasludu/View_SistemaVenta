@@ -1,0 +1,36 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <h1 class="title">Sistema de Ventas</h1>
+
+        <button mat-icon-button (click)="sidenav.toggle();">
+            <mat-icon class="icon-menu">menu</mat-icon>
+        </button>
+
+        <span style="flex: 1 1 auto;"></span>
+        <label class="title" style="font-size: 14px; margin-right: 20px;">{{ correoUsuario }} | {{ rolUsuario }}</label>
+
+        <button mat-icon-button (click)="CerrarSesion()">
+            <mat-icon class="icon-logout">logout</mat-icon>
+        </button>
+
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="true" mode="side">
+        <mat-nav-list>
+
+            <mat-list-item *ngFor="let menu of listaMenus" [routerLink]="menu.url" class="list-item">
+                <mat-icon mat-list-icon>{{ menu.icono }}</mat-icon>
+                <span class="list-text">{{ menu.nombre }}</span>
+            </mat-list-item>
+            
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content> 
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

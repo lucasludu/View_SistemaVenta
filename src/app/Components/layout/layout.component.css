@@ -1,0 +1,48 @@
+/* DENTRO DE TOOLBAR */
+
+mat-toolbar {
+    background-color: blue;
+    height: 5vh;
+}
+
+.title {
+    color: white;
+    font-weight: 400;
+    margin-right: 10px;
+}
+
+.icon-menu, .icon-logout {
+    font-weight: 400;
+    color: white;
+}
+
+/* DENTRO DE SIDENAV */
+
+.list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.list-item:hover {
+    border-radius: 0%;
+}
+
+.list-text {
+    margin-left: 10px;
+}
+
+mat-icon {
+    font-size: 24px;
+}
+
+mat-sidenav {
+    border-right: 1px solid black;
+    border-radius: 0%;
+    background-color: #fff;
+    width: 250px;
+}
+
+mat-sidenav-content {
+    height: calc(100vh - var(--mat-toolbar-standard-height));
+}
